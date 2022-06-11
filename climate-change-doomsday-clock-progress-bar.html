@@ -1,12 +1,47 @@
 <!--
-index2
-Set up intial bar
+index3
+
 -->
+
+
 <html>
 <head>
     <title>Climate change bar</title>
 
     <style>
+        :root {
+            --bar-main-colour: cornflowerblue;
+            --background-colour: steelblue;
+        }
+
+
+        body { 
+            background-color: steelblue;
+        }
+
+
+        h2 { 
+            color: white;
+        }
+
+
+        #bar {
+            color: #fff;
+            background-color: var(--bar-main-colour);
+
+            //height: 5%;
+            //height: 5em;
+            height: calc(5%)!important;
+        }
+
+
+
+        /*
+        .w3-green, .w3-hover-green:hover {
+            color: #fff!important;
+            background-color: #4CAF50!important;
+        }
+        */
     </style>
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -23,26 +58,46 @@ https://www.w3schools.com/w3css/w3css_progressbar.asp
 
 <div class="w3-container">
 <div style="display:flex;justify-content:center;align-items:center;"> <!-- http://howtocenterincss.com/#contentType=text&content.text.lines=1&horizontal=center&vertical=middle -->
-    <h2>Doomaday Clock Climate Change Progress Bar</h2>
+    <h2><b>Doomaday Clock Climate Change Progress Bar</b></h2>
 </div>
 <!--<p>Label outside of the progress bar:</p> -->
 
-<div class="w3-light-grey">
-  <div id="myBar" class="w3-container w3-green" style="height:24px;width:20%"></div>
-  </div>
 
-  <p id="demo">20%</p>
+<!--
+<div style="display:flex;justify-content:center;align-items:center;width:100%;height:100%;">
+  <div></div>
+</div>
+-->
 
-  <!--<button class="w3-button w3-green" onclick="move()">Click Me</button> -->
+
+<div style="padding-top: 25%;">
+    <div class="w3-light-grey">
+        <!--<div id="bar" class="w3-container w3-green" style="height:24px;width:20%"></div>-->
+        <div id="bar" class="w3-container" style="height:24px;width:20%"></div>
+    </div>
+</div>
+
+    <p id="demo" style="color:white;">20%</p>
+
+    <!--<button class="w3-button w3-green" onclick="move()">Click Me</button> -->
 </div>
 
 <script>
+
+var currentTempraturePrev = 0;
+var currentTemprature = 1;
+var maxTemprature = 3;
+
+
 function move() {
-  var elem = document.getElementById("myBar");   
-  var width = 20;
+  var elem = document.getElementById("bar");   
+  var width = (currentTempraturePrev / maxTemprature ) *100; //Previous temprature as percentage
   var id = setInterval(frame, 10);
+
   function frame() {
-    if (width >= 100) {
+    //console.log()
+    //if (width >= 100) {
+    if (width >= (currentTemprature / maxTemprature ) *100 ){ //Current temprature as percentage 
       clearInterval(id);
     } else {
       width++; 
