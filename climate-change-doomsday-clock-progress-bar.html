@@ -1,5 +1,5 @@
 <!--
-index4
+index5
 
 -->
 
@@ -35,6 +35,11 @@ index4
         }
 
 
+        #bigNumber {
+            font-size: 12em;
+        }
+
+
 
         /*
         .w3-green, .w3-hover-green:hover {
@@ -59,22 +64,21 @@ https://www.w3schools.com/w3css/w3css_progressbar.asp
 <div class="w3-container">
 <div style="display:flex;justify-content:center;align-items:center;"> <!-- http://howtocenterincss.com/#contentType=text&content.text.lines=1&horizontal=center&vertical=middle -->
     <h2><b>Doomsday Clock Climate Change Progress Bar</b></h2>
-    <!--<h2><b>nC</b></h2>-->
 </div>
+
+
+<div style="display:flex;justify-content:center;align-items:center;height:30%;">
+  <div><h2><b id="bigNumber">nC</b></h2></div>
+</div>
+
+
 <!--<p>Label outside of the progress bar:</p> -->
 
 
-<!--
-<div style="display:flex;justify-content:center;align-items:center;width:100%;height:100%;">
-  <div></div>
-</div>
--->
-
-
-<!--<div style="padding-top: 25%;"> -->
-<div style="padding-top: calc(25% - 5%);"> <!-- 25% - height of bar (which is 5% (currently) - height of text boxes) -->
+<!-- <div style="margin-top: calc(40% - 5% - 15% - 4.26em);"> -->
+<!-- 45% - height of bar (which is 5% (currently)) - height of text boxes (which is currently 30%) - the height of default h4) -->
+<div style="margin-top: calc(45% - 5% - 30% - 4.26em);">
     <div class="w3-light-grey">
-        <!--<div id="bar" class="w3-container w3-green" style="height:24px;width:20%"></div>-->
         <div id="bar" class="w3-container" style="width:20%"></div>
     </div>
 </div>
@@ -87,7 +91,7 @@ https://www.w3schools.com/w3css/w3css_progressbar.asp
 <script>
 
 var currentTempraturePrev = 0;
-var currentTemprature = 1.8;
+var currentTemprature = 1.2;
 var maxTemprature = 3;
 
 
@@ -105,14 +109,19 @@ function move() {
       width++; 
       elem.style.width = width + '%';
       //document.getElementById("demo").innerHTML = '+tempC / ' + width * 1 + '%';
-      document.getElementById("demo").innerHTML = ( (width/100) * maxTemprature ) + ' / ' + width * 1 + '%';
+      //document.getElementById("demo").innerHTML = ( (width/100) * maxTemprature ) + ' / ' + width * 1 + '%';
+      var processingTemp = ( (width/100) * maxTemprature );
+      document.getElementById("demo").innerHTML = processingTemp + '&deg;C / ' + width * 1 + '%';
+      document.getElementById("bigNumber").innerHTML = processingTemp + '&deg;C';
+
       /*
       (currentTemprature / maxTemprature ) *100 = width
       currentTemprature = (width/100) * maxTemprature 
       */
     }
     //Update temprature to actual temprature when loop finished //Doesn't currently work i4 20:45pm 11/June/22
-    document.getElementById("demo").innerHTML = (currentTemprature) + ' / ' + width * 1 + '%';
+    document.getElementById("demo").innerHTML = (currentTemprature) + '&deg;C / ' + width * 1 + '%';
+    document.getElementById("bigNumber").innerHTML = (currentTemprature) + '&deg;C';
   }
 }
 
