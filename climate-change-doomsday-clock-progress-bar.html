@@ -1,5 +1,5 @@
 <!--
-index3
+index4
 
 -->
 
@@ -58,7 +58,8 @@ https://www.w3schools.com/w3css/w3css_progressbar.asp
 
 <div class="w3-container">
 <div style="display:flex;justify-content:center;align-items:center;"> <!-- http://howtocenterincss.com/#contentType=text&content.text.lines=1&horizontal=center&vertical=middle -->
-    <h2><b>Doomaday Clock Climate Change Progress Bar</b></h2>
+    <h2><b>Doomsday Clock Climate Change Progress Bar</b></h2>
+    <!--<h2><b>nC</b></h2>-->
 </div>
 <!--<p>Label outside of the progress bar:</p> -->
 
@@ -70,10 +71,11 @@ https://www.w3schools.com/w3css/w3css_progressbar.asp
 -->
 
 
-<div style="padding-top: 25%;">
+<!--<div style="padding-top: 25%;"> -->
+<div style="padding-top: calc(25% - 5%);"> <!-- 25% - height of bar (which is 5% (currently) - height of text boxes) -->
     <div class="w3-light-grey">
         <!--<div id="bar" class="w3-container w3-green" style="height:24px;width:20%"></div>-->
-        <div id="bar" class="w3-container" style="height:24px;width:20%"></div>
+        <div id="bar" class="w3-container" style="width:20%"></div>
     </div>
 </div>
 
@@ -85,7 +87,7 @@ https://www.w3schools.com/w3css/w3css_progressbar.asp
 <script>
 
 var currentTempraturePrev = 0;
-var currentTemprature = 1;
+var currentTemprature = 1.8;
 var maxTemprature = 3;
 
 
@@ -101,9 +103,16 @@ function move() {
       clearInterval(id);
     } else {
       width++; 
-      elem.style.width = width + '%'; //'+tempC / ' + width + '%'; 
-      document.getElementById("demo").innerHTML = '+tempC / ' + width * 1 + '%';
+      elem.style.width = width + '%';
+      //document.getElementById("demo").innerHTML = '+tempC / ' + width * 1 + '%';
+      document.getElementById("demo").innerHTML = ( (width/100) * maxTemprature ) + ' / ' + width * 1 + '%';
+      /*
+      (currentTemprature / maxTemprature ) *100 = width
+      currentTemprature = (width/100) * maxTemprature 
+      */
     }
+    //Update temprature to actual temprature when loop finished //Doesn't currently work i4 20:45pm 11/June/22
+    document.getElementById("demo").innerHTML = (currentTemprature) + ' / ' + width * 1 + '%';
   }
 }
 
