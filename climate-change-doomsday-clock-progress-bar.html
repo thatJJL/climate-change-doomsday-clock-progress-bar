@@ -1,5 +1,5 @@
 <!--
-index1
+index2
 Set up intial bar
 -->
 <html>
@@ -22,9 +22,10 @@ https://www.w3schools.com/w3css/w3css_progressbar.asp
 -->
 
 <div class="w3-container">
-
-<h2>Dynamic Progress Bar with Labels</h2>
-<p>Label outside of the progress bar:</p>
+<div style="display:flex;justify-content:center;align-items:center;"> <!-- http://howtocenterincss.com/#contentType=text&content.text.lines=1&horizontal=center&vertical=middle -->
+    <h2>Doomaday Clock Climate Change Progress Bar</h2>
+</div>
+<!--<p>Label outside of the progress bar:</p> -->
 
 <div class="w3-light-grey">
   <div id="myBar" class="w3-container w3-green" style="height:24px;width:20%"></div>
@@ -32,7 +33,7 @@ https://www.w3schools.com/w3css/w3css_progressbar.asp
 
   <p id="demo">20%</p>
 
-  <button class="w3-button w3-green" onclick="move()">Click Me</button> 
+  <!--<button class="w3-button w3-green" onclick="move()">Click Me</button> -->
 </div>
 
 <script>
@@ -45,12 +46,21 @@ function move() {
       clearInterval(id);
     } else {
       width++; 
-      elem.style.width = width + '%'; 
-      document.getElementById("demo").innerHTML = width * 1  + '%';
+      elem.style.width = width + '%'; //'+tempC / ' + width + '%'; 
+      document.getElementById("demo").innerHTML = '+tempC / ' + width * 1 + '%';
     }
   }
 }
+
+move()
 </script>
+
+
+<!--
+https://codepen.io/alvarotrigo/pen/vYeNpjj
+https://alvarotrigo.com/blog/progress-bar-css/
+-->
+
 
 
 
