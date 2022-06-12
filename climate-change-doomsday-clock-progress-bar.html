@@ -1,5 +1,5 @@
 <!--
-index7
+index7.1
 
 -->
 
@@ -55,7 +55,34 @@ index7
         }
 
 
+.collapsible {
+  background-color: lightsteelblue; /*#777;*/
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
 
+.active, .collapsible:hover {
+  background-color: var(--bar-main-colour); /*#555;*/
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+
+    a:hover {
+        color: steelblue; /*lightsteelblue;*/ /*steelblue;*/
+    }
 
 
 /*
@@ -220,7 +247,10 @@ https://www.w3schools.com/w3css/w3css_progressbar.asp
 <!-- 45% - height of bar (which is 5% (currently)) - height of text boxes (which is currently 30%) - the height of default h4) -->
 <div style="margin-top: calc(45% - 5% - 30% - 4.26em);">
     <div class="w3-light-grey">
-        <div id="bar" class="w3-container" style="width:20%"></div>
+        <span style="float:right; margin: calc( (5% - 1.5em) / 4) 10; color: lightsteelblue;">3&deg;C</span> <!-- 1.5 as that is what line height is. -->
+        <div id="bar" class="w3-container" style="width:20%">
+            <!--<span style="float:right; justify-content:center;">3</span>-->
+        </div>
     </div>
 </div>
 
@@ -342,31 +372,8 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_collapsible_animate
 
 
 <style>
-.collapsible {
-  background-color: lightsteelblue; /*#777;*/
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.active, .collapsible:hover {
-  background-color: var(--bar-main-colour); /*#555;*/
-}
-
-.content {
-  padding: 0 18px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background-color: #f1f1f1;
-}
 </style>
-</head>
+
 <body>
 
 <!--
@@ -386,17 +393,26 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_collapsible_animate
 
 <!-- Havard referencing system --> <!-- TDOD 17:56pm 12/June/22 i6 -->
 
-<button class="collapsible">12&frasl;06&frasl;2022 &dot; 1.1&deg;C</button>
+<!--
+<button class="collapsible">Sources & References</button>
 <div class="content">
-    <p>+1.1&deg;C</p>
-    <p><a href="https://www.ipcc.ch/2021/08/09/ar6-wg1-20210809-pr/#:~:text=The%20report%20shows%20that%20emissions,1.5%C2%B0C%20of%20warming.">IPCC [secondary]</a></p>
-    <p><a href="https://earthobservatory.nasa.gov/world-of-change/global-temperatures#:~:text=According%20to%20an%20ongoing%20temperature,1.9%C2%B0%20Fahrenheit)%20since%201880.">Earth Observatory [secondary]</a></p>
-    <p><a href="https://data.giss.nasa.gov/gistemp/">nasa</a></p>
-</div>
-<button class="collapsible">Open Section 2</button>
-<div class="content">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
+-->
+    
+    <!--<button class="collapsible">12&frasl;06&frasl;2022 &dot; 1.1&deg;C</button>-->
+    <button class="collapsible">12/06/2022 · 1.1&deg;C</button>
+    <div class="content">
+        <p>+1.1&deg;C</p>
+        <p><a href="https://www.ipcc.ch/2021/08/09/ar6-wg1-20210809-pr/#:~:text=The%20report%20shows%20that%20emissions,1.5%C2%B0C%20of%20warming.">IPCC [secondary]</a></p>
+        <p><a href="https://earthobservatory.nasa.gov/world-of-change/global-temperatures#:~:text=According%20to%20an%20ongoing%20temperature,1.9%C2%B0%20Fahrenheit)%20since%201880.">Earth Observatory [secondary]</a></p>
+        <p><a href="https://data.giss.nasa.gov/gistemp/">NASA</a></p>
+    </div>
+
+    <button class="collapsible">Open Section 2</button>
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+<!--<div> --> <!-- End of parent div -->
 
 
 
@@ -427,7 +443,10 @@ for (i = 0; i < coll.length; i++) {
 
 
 
-
+<p style="font-size:0.6em; color:white; text-align:center;">JJL</p>
+<!--<p class="small" >JJL</p>-->
+<!--<span style="font-size:0.6em; color:white; float:center;"> <a>GitHub</a> </span> -->
+<!-- <div style="display:flex;justify-content:center;align-items:center;">Text Content</div> -->
 
 
 
