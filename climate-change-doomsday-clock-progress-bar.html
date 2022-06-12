@@ -1,5 +1,5 @@
 <!--
-index5.1
+index6
 
 -->
 
@@ -226,7 +226,7 @@ https://www.w3schools.com/w3css/w3css_progressbar.asp
 <script>
 
 var currentTempraturePrev = 0;
-var currentTemprature = 1.2;
+var currentTemprature = 1.1;
 var maxTemprature = 3;
 
 
@@ -323,89 +323,89 @@ https://codepen.io/remilaudanski/pen/gbBGyN
 
 
 
-
+<!--
+https://www.w3schools.com/howto/howto_js_collapsible.asp
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_collapsible_animate
+-->
 
 
 <style>
-/*body {background-color : #ededed; font-family : "Open Sans", sans-serif;}*/
-
-/*h1 {padding: 40px; text-align: center; font-size: 1.5em;}*/
-
-li a {text-decoration : none; color : #2d2f31;}
-
-
-nav {
-  width : 300px; 
-  background: #d9d9d9;
-  /*margin : 40px auto; */
-
-  /*margin : 15% auto; */
-  /*margin : 23em auto; */
-  //margin : 55% auto; 
+.collapsible {
+  background-color: lightsteelblue; /*#777;*/
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
 }
 
-span {
-  padding : 20px;
-  background : lightsteelblue; /*#2d2f31; */
-  color : white;
-  /*font-size : 1.2em;*/
-  /*font-variant : small-caps; */
-  cursor : pointer;
-  display: block;
-
+.active, .collapsible:hover {
+  background-color: var(--bar-main-colour); /*#555;*/
 }
 
-span::after {
-  float: right;
-  right: 10%;
-  /*content: "+";*/
-}
-
-.slide {
-  clear:both;
-  width:100%;
-  height:0px;
+.content {
+  padding: 0 18px;
+  max-height: 0;
   overflow: hidden;
-  text-align: center;
-  transition: height .4s ease;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
 }
-
-.slide li {padding : 30px;}
-
-#touch {position: absolute; opacity: 0; height: 0px;}    
-
-#touch:checked + .slide {height: 300px;} 
-
-
-
-/*
-https://www.w3schools.com/cssref/tryit.asp?filename=trycss_position_bottom
-https://www.w3schools.com/cssref/pr_pos_bottom.asp
-*/
-div.absolute {
-  position: absolute;
-  //width: 50%;
-  bottom: -200px;
-  //border: 3px solid #8AC007;
-
-}
-
 </style>
-<div class="absolute">
-<nav>
+</head>
+<body>
 
-  <label for="touch"><span>History & Sources</span></label>               
-  <input type="checkbox" id="touch"> 
-
-  <ul class="slide">
-    <li><a href="#">Lorem Ipsum</a></li> 
-    <li><a href="#">Lorem Ipsum</a></li>
-    <li><a href="#">Lorem Ipsum</a></li>
-    <li><a href="#">Lorem Ipsum</a></li>
-  </ul>
-
-</nav> 
+<!--
+<button class="collapsible">Open Collapsible</button>
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 </div>
+-->
+
+
+
+<div></div>
+
+
+<!-- Havard referencing system --> <!-- TDOD 17:56pm 12/June/22 i6 -->
+
+<button class="collapsible">12&frasl;06&frasl;2022 &dot; 1.1&deg;C</button>
+<div class="content">
+    <p>+1.1&deg;C</p>
+    <p><a href="https://www.ipcc.ch/2021/08/09/ar6-wg1-20210809-pr/#:~:text=The%20report%20shows%20that%20emissions,1.5%C2%B0C%20of%20warming.">IPCC [secondary]</a></p>
+    <p><a href="https://earthobservatory.nasa.gov/world-of-change/global-temperatures#:~:text=According%20to%20an%20ongoing%20temperature,1.9%C2%B0%20Fahrenheit)%20since%201880.">Earth Observatory [secondary]</a></p>
+    <p><a href="https://data.giss.nasa.gov/gistemp/">nasa</a></p>
+</div>
+<button class="collapsible">Open Section 2</button>
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+
+
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+
+
+
 
 
 
