@@ -1,5 +1,5 @@
 <!--
-index5(b)
+index5.1
 
 -->
 
@@ -339,7 +339,9 @@ nav {
   background: #d9d9d9;
   /*margin : 40px auto; */
 
-  margin : 15% auto; 
+  /*margin : 15% auto; */
+  /*margin : 23em auto; */
+  //margin : 55% auto; 
 }
 
 span {
@@ -373,8 +375,23 @@ span::after {
 #touch {position: absolute; opacity: 0; height: 0px;}    
 
 #touch:checked + .slide {height: 300px;} 
+
+
+
+/*
+https://www.w3schools.com/cssref/tryit.asp?filename=trycss_position_bottom
+https://www.w3schools.com/cssref/pr_pos_bottom.asp
+*/
+div.absolute {
+  position: absolute;
+  //width: 50%;
+  bottom: -200px;
+  //border: 3px solid #8AC007;
+
+}
+
 </style>
-<!--
+<div class="absolute">
 <nav>
 
   <label for="touch"><span>History & Sources</span></label>               
@@ -388,9 +405,10 @@ span::after {
   </ul>
 
 </nav> 
+</div>
 
 
--->
+
 
 
 </body>
