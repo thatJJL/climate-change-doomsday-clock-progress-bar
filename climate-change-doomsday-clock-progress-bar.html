@@ -1,5 +1,5 @@
 <!--
-index6
+index7
 
 -->
 
@@ -47,6 +47,12 @@ index6
             background-color: #4CAF50!important;
         }
         */
+
+
+        .small {
+            font-size: 0.6em;
+            float: right;
+        }
 
 
 
@@ -218,7 +224,13 @@ https://www.w3schools.com/w3css/w3css_progressbar.asp
     </div>
 </div>
 
-    <p id="demo" style="color:white;">20%</p>
+    <!-- <p id="demo" style="color:white;">20%</p> -->
+    <div style="margin-top:15;margin-bottom:15;">
+         <!--<span id="demo" style="color:white; margin-top:15;margin-bottom:15;">20%</span> -->
+         <span id="demo" style="color:white;">20%</span>
+         <span class="small" id="dataLastChecked" style="color:white;">20%</span> 
+         <span class="small" id="dataPublished" style="color:white;">20%</span> 
+    </div>
 
     <!--<button class="w3-button w3-green" onclick="move()">Click Me</button> -->
 </div>
@@ -365,8 +377,11 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_collapsible_animate
 -->
 
 
+<!-- 100% (height of page) - height of bar (which is 5% (currently)) - height of text boxes (which is currently 30%) - the height of default h4) - another number percentage-->
+<!-- -39% shows a small bar at the bottom which lets you know it's there. Could be good to have. 18:15pm i7 12/June/22-->
+<div style="margin-top: calc(100% - 5% - 30% - 4.26em - 38%);">
+</div>
 
-<div></div>
 
 
 <!-- Havard referencing system --> <!-- TDOD 17:56pm 12/June/22 i6 -->
@@ -401,6 +416,11 @@ for (i = 0; i < coll.length; i++) {
     } 
   });
 }
+</script>
+
+<script>
+    document.getElementById("dataPublished").innerHTML = "Data published: 12/06/2022, ";
+    document.getElementById("dataLastChecked").innerHTML = " New Data Last Checked: 12/06/2022";
 </script>
 
 
