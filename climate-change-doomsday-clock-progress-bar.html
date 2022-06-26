@@ -1,6 +1,6 @@
 <!--
-index8
-JS seperation/encapulation
+index9
+
 -->
 
 
@@ -288,55 +288,11 @@ https://codepen.io/remilaudanski/pen/gbBGyN
 
 
 
-
-
-
-<!--
-<div class="dots" onclick="this.classList.toggle('active');">
-  <div class="dot"></div>
-  <div class="dot"></div>
-  <div class="shadow cut"></div>
-  <div class="container cut">
-    <div class="drop cut2"></div>
-  </div>
-  <div class="list">
-    <ul>
-      <li>
-        Mark as read
-      </li>
-      <li>
-        Flag as important
-      </li>
-      <li>
-        Save for later
-      </li>
-      <li>
-        Move to trash
-      </li>
-      <li>
-        Mark as spam
-      </li>
-    </ul>
-  </div>
-  <div class="dot"></div>
-</div>
-<div class="cursor"
-     onclick="document.querySelector('.dots').classList.toggle('active');"></div>
-
--->
-
-
-
 <!--
 https://www.w3schools.com/howto/howto_js_collapsible.asp
 https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_collapsible_animate
 -->
 
-
-<style>
-</style>
-
-<body>
 
 <!--
 <button class="collapsible">Open Collapsible</button>
@@ -379,30 +335,14 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_collapsible_animate
 
 
 
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
+<script src="collapsible.js"></script>
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    } 
-  });
-}
-</script>
+
 
 <script>
     document.getElementById("dataPublished").innerHTML = "Data published: 12/06/2022, ";
     document.getElementById("dataLastChecked").innerHTML = " New Data Last Checked: 12/06/2022";
 </script>
-
-
-
 
 
 <p style="font-size:0.6em; color:white; text-align:center;">JJL</p>
